@@ -21,7 +21,8 @@ weatherForm.addEventListener('submit', function(event) {
     const location = search.value;
     console.log(location);
     messageOne.textContent = 'Loading...'
-    fetch('http://localhost:3000/weather?latitude=28&longitude=77').then(function(response) {
+    //fetch('http://localhost:3000/weather?latitude=28&longitude=77') for localhost
+    fetch('/weather?latitude=28&longitude=77').then(function(response) {
     response.json().then((data)=>{
         if(data.error){
             console.log(data.error);
